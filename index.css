@@ -1,4 +1,104 @@
 body {
     margin: 0;
     font-family: "Smythe", system-ui;
+    color: #000000;
+    background-color: #F5F5F5;
+
+}
+
+header {
+    background-image: url('images/ferks-guare-KEZdWfYD-ow-unsplash\ 1.png');
+    background-size: cover;
+    width: 600px;
+    height: 167px;
+    margin: 0 auto;
+}
+
+/* Typography */
+
+
+/* .header-txt {} */
+
+.main-txt {
+    color: #ffffff;
+    font-size: 39px;
+    font-weight: 100;
+    margin: 0;
+    padding: 46px 0 0 46px;
+}
+
+.sup-txt {
+    color: #ffffff;
+    font-size: 22.42px;
+    font-weight: 100;
+    margin: 0;
+    padding: 0 0 70px 46px;
+}
+
+
+/* Layout */
+
+main {
+    background-color: #ffffff;
+    padding-top: 1px;
+    width: 600px;
+    height: 994px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* .default-state {} */
+
+.item {
+    width: 508px;
+    height: 140px;
+    margin: 67px 46px 45px 46px;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    border-bottom: 1px solid #D2D2D2;
+
+}
+
+.item-img {
+    width: 70px;
+    height: 89px;
+    margin: 0 31px 51px 0;
+}
+
+.add-btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #DEDEDE;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 32px;
+    font-family: "Inter", sans-serif;
+    font-weight: 200;
+    position: absolute;
+    right: 0;
+    top: 3px;
+}
+
+.item-info {
+    margin-top: 0;
+}
+
+.item-name {
+    margin: 0 0 8.8px 0;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.item-ingredients {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    color: #8B8B8B;
+}
+
+.item-price {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+
 }
