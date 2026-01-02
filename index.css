@@ -3,6 +3,7 @@ body {
     font-family: "Smythe", system-ui;
     color: #000000;
     background-color: #F5F5F5;
+    position: relative;
 
 }
 
@@ -51,6 +52,37 @@ body {
 
 }
 
+.order-item-name,
+.total-order {
+    font-size: 28px;
+    font-weight: 100;
+    margin: 14px 13px 8px 0;
+}
+
+.order-item-price,
+.total-price {
+    font-size: 20px;
+    font-weight: 100;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    margin: 0 0 22px 0;
+}
+
+.payment-title {
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 28px;
+    margin: 46px 0;
+}
+
+.pay-div::placeholder {
+    font-size: 28px;
+    font-weight: 200;
+    color: #757575;
+    padding-left: 20px;
+    font-family: "Inter", sans-serif;
+}
 
 /* Layout */
 
@@ -66,17 +98,17 @@ main {
     background-color: #ffffff;
     padding-top: 1px;
     width: 600px;
-    height: 994px;
+    /* min-height: 500px; */
     margin: 0 auto;
     display: block;
 }
 
 
-
+/* Item */
 .item {
     width: 508px;
     height: 140px;
-    margin: 67px 46px 45px 46px;
+    margin: 45px 46px 45px 46px;
     display: flex;
     align-items: flex-start;
     position: relative;
@@ -88,6 +120,8 @@ main {
     font-size: 78.72px;
     margin: 0 31px 51px 0;
 }
+
+/* Buttons */
 
 .add-btn {
     width: 50px;
@@ -108,6 +142,113 @@ main {
 }
 
 
-.add-btn span {
-    transform: translateY(-1px);
+.remove-btn {
+    font-family: "Arimo", sans-serif;
+    color: #BBBBBB;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    margin: 14px 13px 8px 0;
+}
+
+.purchase-btn {
+    color: white;
+    background-color: #16DB99;
+    border: none;
+    border-radius: 3px;
+    width: 508px;
+    height: 60px;
+    cursor: pointer;
+    margin-bottom: 53px;
+}
+
+.pay-btn {
+    margin: 46px 23px 29px 24px;
+    color: white;
+    background-color: #16DB99;
+    border: none;
+    border-radius: 3px;
+    width: 476px;
+    height: 71px;
+    cursor: pointer;
+}
+
+/* order state */
+
+.pre-checkout-state {
+    width: 508px;
+    display: none;
+    margin: 45px auto 53px auto;
+
+
+}
+
+.order-title {
+    font-size: 28px;
+    text-align: center;
+}
+
+.order-info,
+.total {
+    display: flex;
+    position: relative;
+}
+
+
+.divider {
+    border: 1px solid #393333;
+}
+
+.total {
+    margin-bottom: 53px;
+}
+
+.div-wrapper {
+    height: auto;
+    min-height: 417px;
+}
+
+
+
+/* checkOut state */
+.checkout-state {
+    display: none;
+    position: absolute;
+    top: 292px;
+    right: 38px;
+    left: 38px;
+    width: 524px;
+    height: 542px;
+    margin: 0 auto;
+    border: 1px solid #757575;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 10px 10px 5px 1px #757575;
+}
+
+.pay-div {
+    display: block;
+    margin: 23px auto 0 auto;
+    width: 476px;
+    height: 71.3px;
+    font-size: 28px;
+
+}
+
+/* Order complete state */
+
+.order-complete-state {
+    width: 504px;
+    height: 120px;
+    color: #065F46;
+    background-color: #ECFDF5;
+    font-size: 32px;
+    border-radius: 3px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 789px;
+    left: 50px;
+    right: 46px;
 }

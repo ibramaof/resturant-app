@@ -2,6 +2,12 @@ import { menuArray } from "./data.js";
 const menuItems = document.getElementById('default-state')
 
 
+document.addEventListener('click', e => {
+    if (e.target.id) {
+        console.log(e.target.id)
+    }
+})
+
 
 
 
@@ -16,7 +22,7 @@ function getItems() {
                     <P class="item-ingredients">${ingredients}</P>
                     <p class="item-price">${price}$</p>
                 </div>
-                <button class="add-btn"><span>+</span></button>
+                <button id="${id}" class="add-btn">+</button>
             </div>
     `
     }).join('')

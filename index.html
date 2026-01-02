@@ -12,6 +12,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -25,10 +29,42 @@
         <div class="default-state" id="default-state">
 
         </div>
-        <div class="pre-checkout-state"></div>
-        <div class="checkout-state"></div>
-        <div class="rate-state"></div>
-        <div class="order-complete-state"></div>
+        <div class="div-wrapper">
+            <div class="pre-checkout-state" id="pre-checkout-state">
+                <p class="order-title">Your order</p>
+                <div class="order-info">
+                    <p class="order-item-name">Pizza</p>
+                    <button class="remove-btn">remove</button>
+                    <p class="order-item-price">14$</p>
+                </div>
+
+                <div class="divider"></div>
+                <div class="total">
+                    <p class="total-order">Total price:</p>
+                    <p class="total-price">$14</p>
+                </div>
+
+                <button class="purchase-btn" id="purchase-btn">Complete order</button>
+
+            </div>
+        </div>
+
+        <div class="checkout-state">
+            <p class="payment-title">Enter card details</p>
+            <form>
+                <input type="text" name="name" id="name" required placeholder="Enter your name" class="pay-div">
+                <input type="text" name="cardNumb" id="cardNumb" required placeholder="Enter card number"
+                    class="pay-div">
+                <input type="text" name="cvv" id="cvv" required placeholder="Enter CVV" class="pay-div">
+                <button role="submit" class="pay-btn" id="pay-btn">Pay</button>
+            </form>
+
+
+        </div>
+        <!-- <div class="rate-state"></div> -->
+        <div class="order-complete-state">
+            Thanks, James! Your order is on its way!
+        </div>
     </main>
     <script src="index.js" type="module"></script>
 </body>
