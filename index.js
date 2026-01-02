@@ -1,4 +1,5 @@
 import { menuArray } from "./data.js";
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 const menuItems = document.getElementById('default-state')
 const preCheck = document.getElementById('pre-checkout-state')
 const payments = document.getElementById('checkout-state')
@@ -30,12 +31,17 @@ let items = []
 let totalprice = 0
 function additem(itemObj) {
     totalprice += itemObj.price
-    items.push(itemObj)
+    const newItem = {
+        ...itemObj,
+        uuid: uuidv4()
+    }
+    items.push(newItem)
     additems(items)
 }
 
 function removeItem(itemId) {
-    items = items.filter(item => item.id.toString() !== itemId)
+    console.log(itemId)
+    items = items.filter(item => item.uuid !== itemId)
     additems(items)
 }
 
@@ -44,7 +50,7 @@ function additems(items) {
         return `
                 <div class="order-info">
                         <p class="order-item-name">${item.name}</p>
-                        <button class="remove-btn" data-remove="${item.id}">remove</button>
+                        <button class="remove-btn" data-remove="${item.uuid}">remove</button>
                         <p class="order-item-price">$${item.price}</p>
                 </div>
         `
