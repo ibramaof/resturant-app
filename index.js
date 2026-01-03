@@ -1,5 +1,5 @@
 import { menuArray } from "./data.js";
-import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+// import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 const menuItems = document.getElementById('default-state')
 const preCheck = document.getElementById('pre-checkout-state')
 const payments = document.getElementById('checkout-state')
@@ -30,18 +30,30 @@ function getItem(itemId) {
 let items = []
 let totalprice = 0
 function additem(itemObj) {
-    totalprice += itemObj.price
-    const newItem = {
-        ...itemObj,
-        uuid: uuidv4()
+
+    const existingItem = items.find(item => item.id === itemObj.id)
+    if (existingItem) {
+        existingItem.quantity++
+    } else {
+        items.push({
+            ...itemObj,
+            quantity: 1
+        })
     }
-    items.push(newItem)
+
     additems(items)
 }
 
 function removeItem(itemId) {
-    console.log(itemId)
-    items = items.filter(item => item.uuid !== itemId)
+    const removedItem = items.find(item => item.id.toString() === itemId)
+    if (removedItem) {
+        if (removedItem.quantity > 1) {
+            removedItem.quantity--
+        } else {
+            items = items.filter(item => item.id.toString() !== itemId)
+        }
+
+    }
     additems(items)
 }
 
@@ -50,13 +62,14 @@ function additems(items) {
         return `
                 <div class="order-info">
                         <p class="order-item-name">${item.name}</p>
-                        <button class="remove-btn" data-remove="${item.uuid}">remove</button>
-                        <p class="order-item-price">$${item.price}</p>
+                        <button class="remove-btn" data-remove="${item.id}">remove</button>
+                        <p class="count">x${item.quantity}<p>
+                        <p class="order-item-price">$${item.price * item.quantity}</p>
                 </div>
         `
     })
 
-    totalprice = items.reduce((total, curent) => total + curent.price, 0)
+    totalprice = items.reduce((total, curent) => total + curent.price * curent.quantity, 0)
     if (totalprice === 0) {
         preCheck.style.display = 'none'
     } else {

@@ -5,6 +5,7 @@ export const menuArray = [
         price: 14,
         emoji: "🍕",
         id: 0,
+        quantity: 1,
 
     },
     {
@@ -12,13 +13,15 @@ export const menuArray = [
         ingredients: ["beef", "cheese", "lettuce"],
         price: 12,
         emoji: "🍔",
-        id: 1
+        id: 1,
+        quantity: 1,
     },
     {
         name: "Beer",
         ingredients: ["grain, hops, yeast, water"],
         price: 12,
         emoji: "🍺",
-        id: 2
+        id: 2,
+        quantity: 1,
     }
 ]
